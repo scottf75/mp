@@ -47,7 +47,7 @@ export default function AddCategory({ onAdd }) {
         className={classes.submit}
         onClick={onAdd}
       >
-        Save
+        Save Category
       </Button>
     </form>
   );
