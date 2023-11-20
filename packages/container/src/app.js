@@ -11,6 +11,7 @@ import {
 import { createBrowserHistory } from 'history';
 
 const AuthLazy = lazy(() => import('./components/AuthApp'));
+const CategoryLazy = lazy(() => import('./components/CategoryApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -20,12 +21,19 @@ const history = createBrowserHistory();
 
 export default () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isAdded, setAddCategory] = useState(false);
 
   useEffect(() => {
     if (isSignedIn) {
       history.push('/dashboard');
     }
   }, [isSignedIn]);
+
+  useEffect(() => {
+    if (isAdded) {
+      console.log('Category Added');
+    }
+  }, [isAdded]);
 
   return (
     <Router history={history}>
@@ -39,6 +47,9 @@ export default () => {
             <Switch>
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
+              </Route>
+              <Route path="/category">
+                <CategoryLazy onAdd={() => setAddCategory(true)} />
               </Route>
             </Switch>
           </Suspense>

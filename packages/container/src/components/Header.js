@@ -81,6 +81,18 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             App
           </Typography>
+          {isSignedIn && (
+            <Button
+              color="primary"
+              variant="outlined"
+              className={classes.link}
+              component={RouterLink}
+              to={isSignedIn ? '/category/add' : '/'}
+              onClick={onClick}
+            >
+              Category
+            </Button>
+          )}
           <Button
             color="primary"
             variant="outlined"
