@@ -18,10 +18,10 @@ export default ({ history, onAdd }) => {
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            <Route path="/category/Add">
+            <Route path="/category/add">
               <Add onAdd={onAdd} />
             </Route>
-            <Route path="/category/List">
+            <Route path="/category/list">
               <List />
             </Route>
           </Switch>
