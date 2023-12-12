@@ -17,8 +17,14 @@ addCategoryChannel.subscribe('addcategoryevent', (data) => {
   console.log('addCategoryChannel received:', data);
 });
 
+let addAccountChannel = postal.channel('addAccountChannel');
+addAccountChannel.subscribe('addaccountevent', (data) => {
+  console.log('addAccountChannel received:', data);
+});
+
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const CategoryLazy = lazy(() => import('./components/CategoryApp'));
+const AccountLazy = lazy(() => import('./components/AccountApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -29,6 +35,7 @@ const history = createBrowserHistory();
 export default () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isAdded, setAddCategory] = useState(false);
+  const [isAccountAdded, setAddAccount] = useState(false);
 
   useEffect(() => {
     if (isSignedIn) {
@@ -57,6 +64,9 @@ export default () => {
               </Route>
               <Route path="/category">
                 <CategoryLazy onAdd={() => setAddCategory(true)} />
+              </Route>
+              <Route path="/account">
+                <AccountLazy onAdd={() => setAddAccount(true)} />
               </Route>
             </Switch>
           </Suspense>

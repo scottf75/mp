@@ -93,6 +93,18 @@ export default function Header({ isSignedIn, onSignOut }) {
               Category
             </Button>
           )}
+          {isSignedIn && (
+            <Button
+              color="primary"
+              variant="outlined"
+              className={classes.link}
+              component={RouterLink}
+              to={isSignedIn ? '/account/list' : '/'}
+              onClick={onClick}
+            >
+              Account
+            </Button>
+          )}
           <Button
             color="primary"
             variant="outlined"
