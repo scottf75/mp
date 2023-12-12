@@ -1,6 +1,6 @@
 {
   "name": "account",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js & json-server --watch db.json --port 3002",
     "build": "webpack --config config/webpack.prod.js"
