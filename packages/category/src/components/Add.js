@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import postal from 'postal';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -9,24 +10,33 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
-  form: {
-    width: '100%',
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
 }));
 
 export default function AddCategory({ onAdd }) {
   const classes = useStyles();
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    var catname = document.getElementById('name').value;
+    fetch('http://localhost:3001/category', {
+      method: 'POST',
+      body: JSON.stringify({ name: catname }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      // .then((data) => setCategories(data))
+      .catch((error) => console.log(error));
+
+    console.log('You clicked submit.');
+    let addCategoryChannel = postal.channel('addCategoryChannel');
+    // Publish a message on channel1
+    addCategoryChannel.publish('addcategoryevent', catname);
+  }
+
   return (
-    <form
-      onSubmit={(e) => e.preventDefault()}
-      className={classes.form}
-      noValidate
-    >
+    <form onSubmit={handleSubmit} className={classes.form} noValidate>
       <TextField
         variant="outlined"
         margin="normal"

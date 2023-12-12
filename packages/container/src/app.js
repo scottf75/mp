@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/Header';
 import Progress from './components/Progress';
+import postal from 'postal';
 
 import {
   StylesProvider,
@@ -9,6 +10,12 @@ import {
 } from '@material-ui/core/styles';
 
 import { createBrowserHistory } from 'history';
+
+// postal channels
+let addCategoryChannel = postal.channel('addCategoryChannel');
+addCategoryChannel.subscribe('addcategoryevent', (data) => {
+  console.log('addCategoryChannel received:', data);
+});
 
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const CategoryLazy = lazy(() => import('./components/CategoryApp'));
@@ -31,7 +38,7 @@ export default () => {
 
   useEffect(() => {
     if (isAdded) {
-      console.log('Category Added');
+      console.log('added');
     }
   }, [isAdded]);
 
