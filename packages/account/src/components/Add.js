@@ -17,10 +17,10 @@ export default function AddAccount({ onAdd }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    var catname = document.getElementById('name').value;
-    fetch('http://localhost:3002/Account', {
+    var accountname = document.getElementById('name').value;
+    fetch(process.env.API_URL, {
       method: 'POST',
-      body: JSON.stringify({ name: catname }),
+      body: JSON.stringify({ name: accountname }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
@@ -32,7 +32,7 @@ export default function AddAccount({ onAdd }) {
     console.log('You clicked submit.');
     let addAccountChannel = postal.channel('addAccountChannel');
     // Publish a message on channel1
-    addAccountChannel.publish('addaccountevent', catname);
+    addAccountChannel.publish('addaccountevent', accountname);
   }
 
   return (
@@ -43,7 +43,7 @@ export default function AddAccount({ onAdd }) {
         required
         fullWidth
         id="name"
-        label="Category Name"
+        label="Account Name"
         name="name"
         autoComplete="name"
         autoFocus

@@ -32,7 +32,7 @@ const CategoriesList = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    fetch('http://localhost:3001/category')
+    fetch(process.env.API_URL)
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.log(error));

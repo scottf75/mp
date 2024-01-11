@@ -18,7 +18,7 @@ export default function AddCategory({ onAdd }) {
   function handleSubmit(e) {
     e.preventDefault();
     var catname = document.getElementById('name').value;
-    fetch('http://localhost:3001/category', {
+    fetch(process.env.API_URL, {
       method: 'POST',
       body: JSON.stringify({ name: catname }),
       headers: {

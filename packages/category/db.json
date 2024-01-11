@@ -1,64 +1,16 @@
 {
   "category": [
     {
-      "id": 1,
-      "name": "Category 1"
+      "name": "groceries",
+      "id": 1
     },
     {
-      "id": 40,
-      "name": "test cat"
+      "name": "sports",
+      "id": 2
     },
     {
-      "name": "misc income",
-      "id": 41
-    },
-    {
-      "name": "new test",
-      "id": 42
-    },
-    {
-      "name": "charity",
-      "id": 43
-    },
-    {
-      "name": "misc",
-      "id": 44
-    },
-    {
-      "name": "misc expense",
-      "id": 45
-    },
-    {
-      "name": "dfasdfadsf",
-      "id": 46
-    },
-    {
-      "name": "",
-      "id": 47
-    },
-    {
-      "name": "fasdfsdfs",
-      "id": 48
-    },
-    {
-      "name": "test",
-      "id": 49
-    },
-    {
-      "name": "test postal",
-      "id": 50
-    },
-    {
-      "name": "test postal 2",
-      "id": 51
-    },
-    {
-      "name": "new scott",
-      "id": 52
-    },
-    {
-      "name": "adsfdsfsd",
-      "id": 53
+      "name": "mortgage",
+      "id": 3
     }
   ]
 }

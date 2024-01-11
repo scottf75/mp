@@ -18,6 +18,7 @@ const prodConfig = {
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
         category: `category@${domain}/category/latest/remoteEntry.js`,
         account: `account@${domain}/account/latest/remoteEntry.js`,
+        transaction: `transaction@${domain}/transaction/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),

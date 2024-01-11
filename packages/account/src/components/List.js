@@ -16,23 +16,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function GridItem({ classes, accountname }) {
-  return (
-    // From 0 to 600px wide (smart-phones), I take up 12 columns, or the whole device width!
-    // From 600-690px wide (tablets), I take up 6 out of 12 columns, so 2 columns fit the screen.
-    // From 960px wide and above, I take up 25% of the device (3/12), so 4 columns fit the screen.
-    <Grid item xs={12} sm={6} md={3}>
-      <Paper className={classes.paper}>{accountname} </Paper>
-    </Grid>
-  );
-}
-
 const AccountsList = () => {
   const [accounts, setAccounts] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
-    fetch('http://localhost:3002/account')
+    fetch(process.env.API_URL)
       .then((response) => response.json())
       .then((data) => setAccounts(data))
       .catch((error) => console.log(error));
