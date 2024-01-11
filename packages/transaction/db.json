@@ -1,0 +1,42 @@
+{
+  "transaction": [
+    {
+      "name": "milk",
+      "accountid": 4,
+      "categoryid": 1,
+      "id": 26
+    }
+  ],
+  "account": [
+    {
+      "name": "usaa checking",
+      "id": 1
+    },
+    {
+      "name": "hfcu savings",
+      "id": 2
+    },
+    {
+      "name": "amex savings",
+      "id": 3
+    },
+    {
+      "name": "usaa card",
+      "id": 4
+    }
+  ],
+  "category": [
+    {
+      "name": "groceries",
+      "id": 1
+    },
+    {
+      "name": "sports",
+      "id": 2
+    },
+    {
+      "name": "mortgage",
+      "id": 3
+    }
+  ]
+}
