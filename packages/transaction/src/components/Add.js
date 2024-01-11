@@ -63,7 +63,7 @@ export default function AddTransaction({ onAdd }) {
       .catch((error) => console.log(error));
 
     console.log(
-      'You clicked submit.',
+      'You clicked submit..',
       tranname,
       accountid,
       categoryid
