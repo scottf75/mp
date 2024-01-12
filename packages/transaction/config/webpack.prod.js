@@ -15,17 +15,17 @@ const prodConfig = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.API_URL': JSON.stringify(
-        `http://${domain}/transaction`
+        `https://${domain}/transaction`
       ),
     }),
     new webpack.DefinePlugin({
       'process.env.TRANSACTION_ACCOUNTAPI_URL': JSON.stringify(
-        `http://${domain}/account`
+        `https://${domain}/account`
       ),
     }),
     new webpack.DefinePlugin({
       'process.env.TRANSACTION_CATEGORYAPI_URL': JSON.stringify(
-        `http://${domain}/category`
+        `https://${domain}/category`
       ),
     }),
     new ModuleFederationPlugin({

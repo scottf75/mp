@@ -15,7 +15,7 @@ const prodConfig = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.API_URL': JSON.stringify(
-        `http://${domain}/category`
+        `https://${domain}/category`
       ),
     }),
     new ModuleFederationPlugin({
