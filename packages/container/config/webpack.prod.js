@@ -5,6 +5,7 @@ const packageJson = require('../package.json');
 const webpack = require('webpack');
 
 const domain = process.env.PRODUCTION_DOMAIN;
+const domainUrl = 'd18q8tuybdwry.cloudfront.net';
 
 const prodConfig = {
   mode: 'production',
