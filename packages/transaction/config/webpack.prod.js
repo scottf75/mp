@@ -5,6 +5,7 @@ const packageJson = require('../package.json');
 const webpack = require('webpack');
 
 const domain = process.env.PRODUCTION_DOMAIN;
+const domainUrl = 'd18q8tuybdwry.cloudfront.net';
 
 const prodConfig = {
   mode: 'production',
@@ -15,17 +16,17 @@ const prodConfig = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.API_URL': JSON.stringify(
-        `https://${domain}/transaction`
+        `https://${domainUrl}/transaction`
       ),
     }),
     new webpack.DefinePlugin({
       'process.env.TRANSACTION_ACCOUNTAPI_URL': JSON.stringify(
-        `https://${domain}/account`
+        `https://${domainUrl}/account`
       ),
     }),
     new webpack.DefinePlugin({
       'process.env.TRANSACTION_CATEGORYAPI_URL': JSON.stringify(
-        `https://${domain}/category`
+        `https://${domainUrl}/category`
       ),
     }),
     new ModuleFederationPlugin({
