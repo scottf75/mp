@@ -35,6 +35,7 @@ const CategoriesList = () => {
     fetch(process.env.API_URL)
       .then((response) => response.json())
       .then((data) => setCategories(data))
+      .then((data) => console.log(data))
       .catch((error) => console.log(error));
   }, []);
 
