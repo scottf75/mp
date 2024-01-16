@@ -5,7 +5,8 @@ const packageJson = require('../package.json');
 const webpack = require('webpack');
 
 const domain = process.env.PRODUCTION_DOMAIN;
-const domainUrl = 'd18q8tuybdwry.cloudfront.net';
+const domainUrl =
+  'ekz13duqh7.execute-api.us-east-2.amazonaws.com/api/';
 
 const prodConfig = {
   mode: 'production',
@@ -15,9 +16,7 @@ const prodConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_URL': JSON.stringify(
-        `https://${domainUrl}/category`
-      ),
+      'process.env.API_URL': JSON.stringify(`https://${domainUrl}`),
     }),
     new ModuleFederationPlugin({
       name: 'category',
