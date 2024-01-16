@@ -35,7 +35,6 @@ const CategoriesList = () => {
   useEffect(() => {
     fetch(process.env.API_URL)
       .then((response) => response.json())
-      .then((data) => console.log(data))
       .then((data) => setCategories(data))
       .catch((error) => console.log(error));
   }, []);
