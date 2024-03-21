@@ -1,0 +1,23 @@
+{
+  "resources": [
+    {
+      "name": "default-role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::376616224778:role/category-dev",
+      "role_name": "category-dev"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-east-2:376616224778:function:category-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "ekz13duqh7",
+      "rest_api_url": "https://ekz13duqh7.execute-api.us-east-2.amazonaws.com/api/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}
